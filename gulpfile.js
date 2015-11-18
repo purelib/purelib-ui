@@ -31,7 +31,8 @@ gulp.task('default', function(){
 var htmlGlobs = [
   srcHtmlPath + '/**/*.html',
   srcHtmlPath + '/**/*.htm',
-  srcHtmlPath + '/**/*.php'
+  srcHtmlPath + '/**/*.php',
+  srcHtmlPath + '/**/*.json',
 ];
 
 var jsGlobs = [
@@ -167,7 +168,7 @@ gulp.task('server', function(){
   gulp.run('fe-watch');
 
   browserSync({
-    server: {baseDir: gulpConfig.target.basePath}
+    server: {baseDir: gulpConfig.targetBasePath}
   });
-  gulp.watch(gulpConfig.src.basePath+['/**/*.*'], {cwd: './'}, reload);
+  gulp.watch(gulpConfig.srcBasePath+['/**/*.*'], {cwd: './'}, reload);
 });
