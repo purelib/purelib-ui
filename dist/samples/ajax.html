@@ -1,0 +1,54 @@
+<html lang="" ng-app="portal" ng-cloak>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/css/normalize.css" rel="stylesheet">
+</head>
+<body>
+<script type="text/javascript" src="../assets/js/jquery.js"></script>
+
+<script>
+  //所有代码都等document on ready 后执行，避免DOM操作失败
+  $(function(){
+
+    //异步请求JSON格式的例子
+    $.ajax({
+      url: 'ajax-data.json', //请求的地址
+      dataType: 'json', //指定响应返回的数据格式，可以为json或text等
+      method: 'GET' //Http请求的方式，有GET,POST两种方式
+    }).then(function(response){ //获得响应后，调用此函数, response代表响应数据的对象
+      var version = response.version; //将response对象的一个属性version赋值给变量
+      $('#debug').append(version); //插入
+    });
+
+    //异步请求普通文本格式或html格式的例子
+    $.ajax({
+      url: 'ajax-data.html', //请求的地址
+      dataType: 'text', //指定响应返回的数据格式，可以为json或text等
+      method: 'GET' //Http请求的方式，有GET,POST两种方式
+    }).then(function(response){ //获得响应后，调用此函数, response代表响应数据的对象
+      var content = response; //这里响应的数据格式为普通的文本
+      console.log(content);
+      $('#debug').append(content); //插入
+    });
+
+    /*
+    //异步请求JSON格式的例子-fetch方式
+    fetch('ajax.json').then(function(response){
+      if(response.ok){
+        response.json().then(function(data){
+            $('#debug').append(data.version);
+        });
+      } else {
+        $('#debug').append('异步请求错误');
+      }
+    });
+    */
+
+  });
+
+</script>
+<div id="debug"></div>
+</body>
+</html>
