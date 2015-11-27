@@ -26,9 +26,15 @@
       content 2
     </div>
   </div>
+
+
 <script type="text/javascript" src="../assets/js/jquery.js"></script>
 
 <script>
+  /**
+  // lazy
+  tabs.tabs('.tabs').on('change', function(){});
+  */
   var tabs = {
     init: function(region){
       $('.tab-content', region).hide();

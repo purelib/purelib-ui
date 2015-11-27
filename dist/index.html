@@ -1,32 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
 <h1>PureLib UI</h1>
 
 <hr/>
 
 <h2>说明</h2>
 <div>
+  <h3>目标:</h3>
   <ul>
     <li>移动优先</li>
     <li>精简: 只提供常见的组件，组件间可以组合</li>
     <li>灵活: 少约束、html结构灵活</li>
     <li>可定制、可扩展: 在不修改代码的情况下，可以调整和扩展</li>
   </ul>
+
+  <h3>开发约定</h3>
+  <ul>
+    <li>KISS(keep it simple): 保持简单</li>
+    <li>Entities should not be multiplied unnecessarily: 奥卡姆剃刀-如无必要勿增实体</li>
+    <li>COC(convention over configuration): 约定大于配置</li>
+    <li>Program To An Interface, Not An Implementation: 面向接口编程，而非实现</li>
+  </ul>
 </div>
 
-<h2>组件</h2>
-<h3>基础功能</h3>
+<h2>基础</h2>
 <ul>
-  <li><a href="#">基础排版</a></li>
-  <li><a href="#">布局</a></li>
-  <li><a href="#">Html元素样式与操作</a></li>
   <li>
-    <h4>基础库</h4>
+    <h4>样式与排版</h4>
+    <ul>
+      <li><a href="#">基础样式与排版</a></li>
+      <li><a href="#">布局</a></li>
+      <li><a href="#">Html元素样式与操作</a></li>
+    </ul>
+  </li>
+
+  <li>
+    <h4>外部库</h4>
     <ul>
       <li><a href="#">jQuery/Zepto: 代码同时兼容jQuery和Zepto</a></li>
     </ul>
   </li>
-  <li><a href="samples/ajax.html">provider: ajax</a></li>
+
+  <li>
+    <h4>基础库</h4>
+    <ul>
+      <li><a href="#">UI Interface: UI组件接口</a></li>
+      <li>
+        <a href="#">Event</a>
+        <ul>
+          <li><a href="#">Custom-Event</a></li>
+          <li><a href="#">Mobile-Event</a></li>
+        </ul>
+      </li>
+      <li><a href="#">State Pattern And FSM: 状态模式和有限状态机</a></li>
+      <li><a href="samples/ajax.html">Ajax-Provider</a></li>
+    </ul>
+  </li>
 </ul>
-<h3>组件</h3>
+
+<h2>组件</h2>
 <ul>
   <li><a href="samples/tabs.html">tabs</a></li>
 </ul>
+
+<h2>例子</h2>
+<ul>
+  <li><a href="samples/ajax.html">ajax</a></li>
+</ul>
+</body>

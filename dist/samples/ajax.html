@@ -33,6 +33,22 @@
       $('#debug').append(content); //插入
     });
 
+    //演示请求失败
+    console.group('演示请求失败');
+    $.ajax({
+      url: 'ajax-data2.html', //请求的地址
+      dataType: 'text', //指定响应返回的数据格式，可以为json或text等
+      method: 'GET' //Http请求的方式，有GET,POST两种方式
+    }).done(function(response){ //成功时执行这里
+      console.log('ok');
+      console.log(response);
+    }).fail(function(xhr, textStatus){ //失败时执行这里
+      //console.log('error');
+      console.log(xhr);
+      console.log(textStatus);
+    });
+    console.groupEnd();
+
     /*
     //异步请求JSON格式的例子-fetch方式
     fetch('ajax.json').then(function(response){
